@@ -1,0 +1,14 @@
+<h1>Listing conversations</h1>
+ 
+<table>
+  <tr>
+    <th>UUID</th>
+  </tr>
+ 
+  <% @conversations.each do |conversation| %>
+    <tr>
+      <td><%= conversation.uuid %></td>
+      <td><%= link_to 'Show', conversation_path(conversation) %></td>
+    </tr>
+  <% end %>
+</table>

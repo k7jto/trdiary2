@@ -1,0 +1,21 @@
+<%= form_for :conversation, url: conversations_path do |f| %>
+
+    <% if @conversation.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@conversation.errors.count, "error") %> prohibited this conversation from being created: 
+            </h2>
+            <ul>
+                <% @conversation.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    
+    <p> <%= f.label :UUID %> <%= f.text_field :uuid, value:@uuid, :readonly => true, :size => 30 %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

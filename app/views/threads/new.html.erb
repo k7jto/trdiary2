@@ -1,0 +1,7 @@
+<%= form_for :thread, url: threads_path do |f| %>
+    <p> <%= f.label :UUID %> <%= f.text_field :threadUUID, value:@threadUUID, :readonly => true, :size => 30 %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
